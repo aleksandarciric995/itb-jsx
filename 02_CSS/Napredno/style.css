@@ -1,0 +1,105 @@
+p {
+    color: gray;
+}
+
+/* kada vise elemenata imaju isto stvojstvo */
+
+h3, h4 {
+    color: orange;
+}
+
+/* Pristupanje klasi */
+
+.desno_poravnanje {
+    text-align: right;
+}
+
+.crveni_tekst {
+    color: red;
+}
+
+.drugi, #treci {
+    background-color: yellow;
+}
+
+/* pristupanje ID-u */
+
+#treci {
+    font-style: italic;
+    /* border: solid 3px red; */
+    border-bottom: dotted 5px rgb(200, 200, 100);
+    border-radius: 100%;
+}
+
+/* Prioritet selektora: element < klasa < ID < inline napisan CSS < !important*/ 
+
+li {
+    color: limegreen;
+}
+
+.stavka {
+    color: blue;
+}
+
+#prva_stavka {
+    color: orange;
+}
+
+#cetvrta_stavka {
+    color: brown !important;
+}
+
+#peta_stavka {
+    color: bisque !important;
+}
+
+/* Kombinator razmak - svi potomci u div tagu koji su p tag*/
+
+div p {
+    color: aquamarine;
+}
+
+/* > OZNACAVA SAMO PRVI p odnosno onaj KOJI MU JE DIREKTAN POTOMAK (DETE) */ 
+
+div>p {
+    border: 1px solid green;
+}
+
+/* Stilizacija linka */ 
+
+a {
+    color: lime;
+    text-decoration: none;
+}
+
+a:link {
+    color: blue;
+}
+
+a:visited {
+    color: brown;
+}
+
+a:hover {
+    background-color: yellow;
+}
+
+/* pseude selektori - svaki prvi potomak koji je tipa paragraf*/
+
+p:first-child {
+    font-weight: bold;
+}
+
+/* nth child - nto dete (kada je u zagradi samo 3 - onda obelezava samo 3. li item) (kada je uzagradi 3n - onda obelezava svaki 3. li)*/
+
+li:nth-child(3) {
+    font-weight: bold;
+}
+
+li:nth-child(3n) {
+    text-decoration: line-through;
+}
+
+li:hover {
+    background-color: aquamarine;
+}

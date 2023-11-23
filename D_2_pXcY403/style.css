@@ -1,0 +1,49 @@
+.naslov {
+    text-align: center;
+    color: grey;
+}
+
+a {
+    text-decoration: none;
+    color: brown;
+}
+
+a:not(.unstyled):hover {
+    background-color: rgb(197, 196, 196);
+}
+
+body {
+    background-color: rgb(240, 238, 238);
+}
+
+.cv_slika {
+    float: left;
+    border: double 5px red;
+    border-radius: 3%;
+    margin-right: 5px;
+ 
+}
+
+.cv_slika:hover {
+   background-color: gray;
+}
+
+p:nth-of-type(1), p:nth-of-type(3) {
+    color: rgb(235, 92, 92);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+}
+
+p:nth-of-type(2) {
+    color: gray;
+}
+
+p:nth-of-type(2) a {
+    text-decoration: none;
+    color: red;
+}
+
+p:nth-of-type(2) a:hover {
+    color: green;
+}
+
