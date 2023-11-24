@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forme</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Osnovne informacije</legend>
+
+            <!-- Obrati paznju na for="#ID" spaja LABEL sa INPUTOM SA ISTIM IDjem/ ako je input unutar labela, ne moras ih tako vezivati -->
+
+            <p>
+                <label for="name">Ime:</label>
+                <input type="text" id="name">
+            </p>
+
+            <p>
+                <input type="text" placeholder="Prezime">
+            </p>
+
+            <p>
+                <input type="text" value="Kurs" maxlength="10">
+            </p>
+            
+            <p>
+                <label for="">Godine</label>
+                <input type="number" min="18" step="0.5">
+            </p>
+
+            <p>
+                <label for="">Lozinka:</label>
+                <input type="password">
+
+            </p>
+            <!-- Search - Kao obicno polje samo sto ima iksic sa strane za brisanje ukucanog  -->
+            <p>
+                <label for="">Search:</label>
+                <input type="search">
+            </p>
+            <!-- U MALOM BROJU BRAVZERA EMAIL i URL ZAPRAVO PROVERAVAJU UKUCANO -->
+            <p>
+                <label for="">Email:</label>
+                <input type="email">
+            </p>
+
+            <p>
+                <label for="">URL:</label>
+                <input type="url">
+            </p>
+            
+            <p>
+                <label for="">Datum rodjenja:</label>
+                <input type="date" min="1900-01-01" max="2023-11-25"
+                step="3">
+            </p>
+
+            <p>
+                <label for="">Vreme:</label>
+                <input type="time">
+            </p>
+
+
+
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Dodatne informacije</legend>
+<!-- INPUT TIPA RADIO, OBRATI DODATNU!!!!!!! PAZNJU. ako inputi tip RADIO imaju ISTI NAME, MOZES ODABRATI SAMO JEDNO POLJE!!!ako nemaju, mozes sva polja odabrati istovremeno. Value je bitno dodati da bismo kada prikuplajmo informacije znamo sta je korisnik izabrao -->
+            <p>
+                <label for="">Odaberite kurs:</label>
+                <input type="radio" name="kurs" checked value="js">JS
+                <input type="radio" name="kurs"
+                value="php">PHP
+                <input type="radio" name="kurs" value="qa">QA
+            </p>
+
+            <p>
+                <label for="check">Znanje:</label>
+                <input type="checkbox" id="check" name="znanje" value="html" checked>HTML
+                <input type="checkbox" name="znanje" value="css" id="css"><label for="css">CSS</label>
+                <input type="checkbox" name="znanje" value="js" id="js"><label for="js">JS</label> 
+            </p>
+
+            <p>
+                <label for="">Odaberite boju:</label>
+                <input type="color" value="#ffabac">
+            </p>
+
+            <p>
+                <label for="fajl">Odaberite fajl:</label>
+                <input type="file" id="fajl">
+            </p>
+
+            <p>
+                <select name="" id="">
+                    <optgroup label="Nis">
+                        <option value="js">Java Script</option>
+                        <option value="qa-ni">QA</option>
+                    </optgroup>
+
+                    <optgroup label="Beograd">
+                        <option value="py">Python</option>
+                        <option value="php">PHP</option>
+                        <option value="qa-bg">QA</option>
+                    </optgroup>
+                </select>
+            </p>
+        </fieldset>
+        <!-- Input type button NE RELOADUJE stranicu -->
+        <input type="button" value="Klikni">
+        <input type="submit" value="Posalji">
+        <input type="reset" value="Resetuj">
+<!-- RESET - resetuje samo na polja u formi u kojoj se nalazi -->
+        <button>Hello</button>
+        <!-- Button po defaultu isto reloaduje stranicu kao i INPUT TYPE SUBMIT -->
+    </form>
+
+   
+
+</body>
+</html>
