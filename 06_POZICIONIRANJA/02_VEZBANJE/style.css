@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+header {
+    background-image: url(pizza.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 300px;
+
+}
+
+
+
+/* Gornji levi
+
+header h1 {
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
+
+/* Donji levi
+
+header h1 {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+} */
+
+/* Gornji desni
+
+header h1 {
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+} */
+
+/* Donji desni */
+
+/* header h1 {
+    color: white;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+} */
+
+/* Centriran u odnosu na header */
+
+
+header h1 {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    
+}
+

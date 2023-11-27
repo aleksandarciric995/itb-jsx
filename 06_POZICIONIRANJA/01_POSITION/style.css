@@ -1,0 +1,42 @@
+div {
+    background-color: blanchedalmond;
+    border: 2px solid red;
+    width: 200px;
+    height: 130px;
+}
+
+#d2 {
+    position: fixed;
+    bottom: 10px;
+    left: 30px;
+    z-index: 1;
+
+}
+
+#d1 {
+    position: relative;
+    top: -10px;
+    left: 20px;
+}
+
+/* POSITION:ABSOLUTE POZICIONIRA ELEMENT APSOLUTNO U ODNOSU NA NAJBLIZEG PRETKA KOJI IMA PODESENU POZICIJU, ako taj predak nema podesenu poziciju, POZICIONIRA SE U ODNOSU NA BODY TAG */
+/* STATIC JE KAO DA IMA PODESENU POZICIJU, A RELATIVE IMA PODESENU POZICIJU KOJA MZOE  a i ne mora DA SE MENJA SA TOP BOTTOM LEFT I RIGHT */
+/* POSITION:STATIC je DAFAULTNA POZICIJA */
+
+div {
+    position: relative;
+}
+
+div h3 {
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    margin: 0;
+}
+
+div p {
+    position: absolute;
+    bottom: 0;
+    right: 5px;
+    margin: 0;
+}
