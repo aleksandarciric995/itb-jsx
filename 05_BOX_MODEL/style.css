@@ -22,3 +22,23 @@ p {
     height: 300px;
 
 }
+
+/* box-sizing:border-box UKLJUCUJE WIDTH I ZA BORDER I PADDING */
+/* INLINE ELEMENTI kad stavis ENTER (razmak), autoamtski imaju razmak tj minimalni razmak izmedju jedan drugog - PISATI IH ILI U ISTOM REDU ILI STAVITI KOMENTAR IZMEDJU */
+
+span {
+    background-color: brown;
+    color: white;
+    border: 3px solid blue;
+    padding: 30px;
+    width: 50%;
+    display: inline-block;
+
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
