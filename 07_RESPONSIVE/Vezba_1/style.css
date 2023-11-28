@@ -1,0 +1,23 @@
+body{
+    background-color: antiquewhite;
+}
+
+img {
+    width: 50%;
+}
+
+/* ZA SIRINU EKRANA ISPOD 700 PX */
+
+@media only screen and (max-width:700px) {
+    img {
+        width: 100%;
+    }
+} 
+
+/* ZA SIRINU EKRANA IZMEDJU 500 i  700 PX */
+
+@media only screen and (min-width: 500px) and (max-width: 700px) {
+    p {
+        color: purple;
+    }
+}
