@@ -64,9 +64,23 @@ console.log(tempKel);
 tempCel = tempKel - 273.15;
 console.log("Temperatura u celzijusima iznosi " + tempCel);
 
-// Zadatak 4 
+// Zadatak 5 
 let datum = new Date(); // datum je promenljiva koja sadrzi informacije o trenutnom datumu i vremenu
 let god = datum.getFullYear();
 let mes = datum.getMonth();
 let dat = datum.getDate();
 console.log(god, mes + 1, dat);
+
+// Zadatak 5 - dva
+let datum2 = new Date();
+console.log(datum2);
+let god2 = datum2.getFullYear();
+let mes2 = datum2.getMonth();
+let dat2 = datum2.getDate();
+console.log("Datum u dd/mm/yyyy formatu: " + god2,  mes2 + 1, dat2);
+
+// 4
+let sat = datum.getHours();
+let min = datum.getMinutes();
+console.log(sat, min);
+console.log("Proslo je ukupno " + (sat * 60 + min) + " minuta od ponoci");
