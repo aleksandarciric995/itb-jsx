@@ -47,10 +47,34 @@ else {
 /* Vezba 9 - Za unet sat početka i sat kraja radnog vremena dva lekara, ispisati DA ukoliko se smene lekara preklapaju, u suprotnom ispisati NE.
 (Ne može se desiti da lekar počne smenu pre ponoći, a završi sa smenom nakon ponoći, ovo se podrazumeva i ne ispitivati dodatno) */
 
-let p1 = 12;
-let p2 = 10;
-let z1 = 20;
-let z2 = 18;
+// NE - k1<p2 ili k2<p1
+
+let p1 = 16;
+let k1 = 21;
+let p2 = 18;
+let k2 = 23;
+
+if(k1 <= p2) {
+    console.log("Ne.");
+}
+else if(k2 <= p1) {
+    console.log("Ne.");
+}
+else {
+    console.log("Da.");
+}
+
+
+// POKUSAJ BEZ OBZIRA NA TRAJANJE SMENE
+if(k1 <= p2) {
+    console.log("Smene se ne preklapaju.");
+}
+else if(p1 <= k2) {
+    console.log("Smene se preklapaju");
+}
+else {
+    console.log("Smene se ne preklapaju");
+}
 
 
 /* Vezba 10 - Uneti dva broja. Većem  broju ispisati sledbenik, a manjem broju ispisati prethodnik. */
