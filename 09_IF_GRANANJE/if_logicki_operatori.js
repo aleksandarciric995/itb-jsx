@@ -169,14 +169,14 @@ else {
 }
 
 // d)
-b1 = 1111;
-b2 = 117;
+b1 = 118;
+b2 = 118;
 b3 = 118;
 
 if(b1 > b2 && b1 > b3) {
     console.log(`b1 je najveci ${b1}`);
 }
-else if(b2 > b1 && b2 > b3) {
+else if(b2 > b3) {
     console.log(`b2 je najveci ${b2}`);
 }
 else {
