@@ -294,6 +294,8 @@ for(brojac = 2; brojac <= k / 2; brojac++) { // a moze i brojac <= Math.sqrt(k);
         break; // break znaci prekini for petlju
     }
 }
+// console.log(`Ovde je break`);
+// console.log(brojac);
 
 if(prost) { // a moze i if(prost == true)
     console.log(`Broj ${k} je prost.`);
@@ -325,3 +327,4 @@ for(i = 1; i <= 6; i++) {
 }
 tabela += `</table>`;
 divTabela.innerHTML = tabela;
+console.log(tabela);
