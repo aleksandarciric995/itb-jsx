@@ -130,3 +130,4 @@ console.log(temperaturaVode2(-50));
 let pTempVode = document.getElementById("tempVode");
 pTempVode.innerHTML = temperaturaVode2(100);
 
+

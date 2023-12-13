@@ -177,3 +177,35 @@ function max4(m1, m2, m3, m4) {
 
 console.log(max4(3312, 44, 5, 6));
 console.log(`test`);
+
+
+/*
+Napisati program koji sadrži funkciju sedmiDan koja za uneti broj n u konzoli ispisuje n-ti dan u nedelji (npr. za 0 ispisuje “Nedelja”, za 1 se ispisuje „Ponedeljak“, za 2 se ispisuje „Utorak“, ... ,  a za 7 opet “Nedelja”).
+Pitanje: Kako bismo realizovali ovaj zadatak da se tražio n-ti mesec u godini?
+*/
+
+function sedmiDan1(n) {
+    if(n % 7 == 0) {
+        return `Nedelja`;
+    }
+    if(n % 7 == 1) {
+        return `Ponedeljak`;
+    }
+    if(n % 7 == 2) {
+        return `Utorak`;
+    }
+    if(n % 7 == 3) {
+        return `Sreda`;
+    }
+    if(n % 7 == 4) {
+        return `Cetvrtak`;
+    }
+    if(n % 7 == 5) {
+        return `Petak`;
+    }
+    if(n % 7 == 6) {
+        return `Subota`;
+    }
+}
+
+console.log(sedmiDan1(7));
