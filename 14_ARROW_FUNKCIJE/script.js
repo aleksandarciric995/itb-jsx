@@ -39,3 +39,5 @@ let echo = (s1, s2) => {
 }
 
 echo(`cao`, `aca`);
+
+let m = 19;
