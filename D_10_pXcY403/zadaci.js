@@ -19,7 +19,6 @@ let kosarkaskiTimovi = niz => {
     for(let i = 0; i < niz.length; i++) {
         sadrzajTabele += `<tr><td style="border: 1px solid black";>${niz[i]}</td></tr>`;
     }
-    console.log(sadrzajTabele);
     document.getElementById(`kosarka`).innerHTML += `<table style="border: 1px solid black";>${sadrzajTabele}</table>`;
 }
 kosarkaskiTimovi(timovi);
