@@ -189,3 +189,161 @@ nizB = [`drugi`, `cetvrti`, `sesti`, `osmi`];
 
 console.log(zad24a(nizA, nizB));
 console.log(zad24b(nizA, nizB));
+
+// zadatak 19 drugi nacin vezbanje 
+// Ispisati dužinu svakog elementa u nizu stringova. 
+
+let zadatak19 = niz => {
+    for(let i = 0; i < niz.length; i++) {
+        let brojac = 0;
+        for(let j = 0; j < niz[i].length; j++) {
+        brojac++;
+    }
+    console.log(brojac);  
+}
+}
+zadatak19(imena);
+
+// zadatak 20 vezbanje Odrediti element u nizu stringova sa najvećom dužinom.
+
+let zadatak20 = niz => {
+    let maxElem = niz[0];
+    for(let i = 1; i < niz.length; i++) {
+        let s = niz[i];
+        if(maxElem.length < s.length) {
+            maxElem = s;
+        }
+    }
+    return maxElem;
+}
+
+console.log(`zadatak 20 = ${zadatak20(imena)}`);
+
+// 21 Odrediti broj elemenata u nizu stringova čija je dužina veća od prosečne dužine svih stringova u nizu.
+
+let zadatak21 = niz => {
+    let srVr = niz => {
+    let suma = 0;
+    for(let i = 0; i < niz.length; i++) {
+        suma += niz[i].length;
+    }
+    return suma / niz.length;
+    }
+    let brojac = 0;
+    for(let i = 0; i < niz.length; i++) {
+        if(niz[i].length > srVr(niz)) {
+            brojac++;
+        }
+    }
+    return brojac;
+}
+console.log(zadatak21(imena));
+
+/*
+22 - Odrediti broj elemenata u nizu stringova koji sadrže slovo 'a’.
+*/
+
+let zadatak22 = niz => {
+    brojac = 0;
+    for(let i = 0; i < niz.length; i++) {
+        for(let j = 0; j < niz[i].length; j++) {
+            if(niz[i][j] === `a`) {
+                brojac++;
+                break;
+            }
+        }
+    }
+    return brojac;
+}
+console.log(zadatak22(imena));
+
+let zadatak22B = niz => {
+    brojac = 0;
+    for(let i = 0; i < niz.length; i++) {
+        if(niz[i].includes(`a`)) {
+            brojac++;
+        }
+    }
+    return brojac;
+}
+console.log(zadatak22B(imena));
+
+/*
+Odrediti broj elemenata u nizu stringova koji počinju na slovo 'a' ili 'A’. 
+*/
+
+let zadatak23 = niz => {
+    let brojac = 0;
+    for(i = 0; i < niz.length; i++) {
+        if(niz[i][0] === `a` || niz[i][0] === `A`) {
+            brojac++;
+        }
+    }
+    return brojac;
+}
+console.log(zadatak23(imena));
+
+let imena2 = [`Stefan`, `Jelena`, `Marko`, `Milos`, `Bratislav`, `Ljiljana`, `aca`, `Ana`];
+
+let zadatak23B = niz => {
+    let brojac = 0;
+    for(i = 0; i < niz.length; i++) {
+        if(niz[i].startsWith(`a`) || niz[i].startsWith(`A`)) {
+            brojac++;
+        }
+    }
+    return brojac;
+}
+console.log(zadatak23B(imena2));
+
+// ZADATAK 24
+
+nizA = [1, 3, 5, 7, 9];
+nizB = [2, 4, 6, 8, 10];
+let nizC = [];
+
+let zadatak24 = (niz1, niz2) => {
+    for(let i = 0; i < niz1.length; i++) {
+        nizC[2 * i] = niz1[i];
+        nizC[2 * i + 1] = niz2[i];
+    }
+}
+zadatak24(nizA, nizB);
+console.log(nizC);
+
+nizC = [];
+
+let zadatak24b = (niza, nizb) => {
+    for(let i = 0; i < niza.length; i++) {
+    nizC.push(niza[i], nizb[i]);
+    }
+}
+zadatak24b(nizA, nizB);
+console.log(nizC);
+
+
+// ZADATAK 25
+console.log(`ZADATAK 25`);
+
+nizC = [];
+
+let zadatak25 = (a, b) => {
+    for(let i = 0; i < a.length; i++) {
+        nizC[i] = [a[i] * b[i]];
+    }
+}
+zadatak25(nizA, nizB);
+console.log(nizC);
+
+// ZADATAK 26 
+
+nizA = [1, 3, 5, 7, 9];
+nizB = [];
+
+let zadatak26 = (a) => {
+    for(let i = 0; i < a.length; i++) {
+        nizB[i] = (a[i] + (2 * a.length - 1 - i)) / 2;
+    }
+}
+zadatak26(nizA);
+console.log(nizB);
