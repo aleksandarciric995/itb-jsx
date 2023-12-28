@@ -323,3 +323,16 @@ console.log(`Student je cudak: ${Student.cudak()}`);
 let niz = [1, 2, 3, 4];
 console.log(niz[((niz.length)/2)]);
 console.log(((niz.length - 1)/2) - 1);
+
+// 2. ZADATAK
+
+let = {
+    destinacija: `Budimpesta`,
+    brojPutnika: 111,
+    brojMesta: 130,
+    isplativ: function() {
+        return (this.brojPutnika > (this.brojMesta / 2));
+    }
+};
+
+console.log(let.isplativ());
