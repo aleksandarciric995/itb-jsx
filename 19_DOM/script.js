@@ -134,3 +134,55 @@ document.querySelectorAll(`p:nth-child(even)`).forEach(p => {
 document.querySelectorAll(`p:nth-child(odd)`).forEach(p => {
     p.style.backgroundColor = `red`;
 });
+
+
+// SEDMA VEZBA
+document.querySelectorAll(`a`).forEach(a => {
+    a.style.padding = `5px`;
+    a.style.fontSize = `18px`;
+    a.style.textDecoration = `none`;
+}) ;
+document.querySelectorAll(`a:nth-child(even)`).forEach(a => {
+    a.style.backgroundColor = `green`;
+    a.style.color = `red`;
+});
+document.querySelectorAll(`a:nth-child(odd)`).forEach(a => {
+    a.style.backgroundColor = `blue`;
+    a.style.color = `white`;
+});
+
+// OSMA VEZBA
+document.querySelectorAll(`img`).forEach(img => {
+    if(img.src.endsWith(`.jpg`)) {
+        img.style.border = `2px solid blue`;
+    }
+});
+// OSMA drugi nacin
+document.querySelectorAll(`img[src$=".jpg"]`).forEach(img => {
+        img.style.border = `22px solid green`;
+});
+
+// DEVETA VEZBA
+document.querySelectorAll(`a`).forEach(a => {
+    if(a.target == `_blank`) {
+        a.target = `_top`;
+    }
+    else {
+        a.target = `_blank`;
+    }
+});
+
+////////////////////////////////////////////////////
+
+let div = e1.parentNode;
+console.log(div);
+console.log(div.childNodes);
+console.log(div.childNodes[1]);
+
+div.childNodes.forEach(elem => {
+    let tip = elem.nodeName;
+    if(tip != `#text`) { // ili if(tip == `p` || tip == `a`);
+        console.log(elem);
+    }
+});
+
