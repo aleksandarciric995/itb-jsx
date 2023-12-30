@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        form {
+            border: 1px solid black;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <button id="hello">Klikni za hello</button>
+    <button id="broji">Broji</button>
+    <p id="ispisBroja"></p>
+    <button id="minus">-</button>
+    <span>0</span>
+    <button id="plus">+</button>
+
+    <div>
+        <input type="text" id="tekst">
+        <p id="ispisTeksta"></p>
+        <input type="radio" name="pol" id="muski" value="muskog">Muski
+        <input type="radio" name="pol" id="zenski" value="zenskog">Zenski
+        <input type="radio" name="pol" id="neopredeljen" value="neopredeljenog" checked>Neopredeljen
+        <button id="ispisiTekst">Ispisi</button>
+    </div>
+    <br>
+
+    <!--  ZADATAK 7 -->
+        <form action="">
+        <label for="kvadrirajInput">Kvadriraj ovaj broj</label>
+        <input type="text" name="" id="kvadrirajInput">
+        <input type="button" value="Izracunaj" id="kvadrirajBtn">
+        <br><br>
+
+        <label for="prepoloviInput">Prepolovi ovaj broj</label>
+        <input type="text" id="prepoloviInput">
+        <input type="button" value="Izracunaj" id="prepoloviBtn">
+        <br><br>
+
+        <label for="povrsinaInput">Izracunati povrsinu kruga za zadati poluprecnik</label>
+        <input type="text" id="povrsinaInput">
+        <input type="button" value="Izracunaj" id="povrsinaBtn"> 
+        <!-- BTN U FORMI JE ISTO STO I INPUT TYPE SUBMIT -->
+    </form>
+    <p id="rezultat"></p>
+    <script src="script.js"></script>
+</body>
+</html>
