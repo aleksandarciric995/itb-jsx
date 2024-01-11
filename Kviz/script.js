@@ -81,7 +81,7 @@ btnNovaPitanja.addEventListener(`click`, () => {
         pitanja[i] = pitanja[j];
         pitanja[j] = temp;
     }
-    divPitanja.innerHTML = ``;
+    divPitanja.innerHTML = ``; // da ne bi pravio vise od 5 pitanja
     // GENERISANJE i ISPIS PITANJA
     for(let i = 0; i < 5; i++) {
         let pomocnaPromenljivaZaInpute = ``;
