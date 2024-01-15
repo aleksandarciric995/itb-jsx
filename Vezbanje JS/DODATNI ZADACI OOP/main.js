@@ -288,3 +288,164 @@ function brojPrepravki(niz, s) {
 
 console.log(brojPrepravki(nizCipela, `usij`));
 
+import Student from "./student.js";
+
+let student1 = new Student(`0309995860318`, `Aca`, `Ciric`, [5, 6, 7, 8, 9, 10, 11]);
+let student2 = new Student(`1804997865054`, `Seka`, `Ciric`, [7, 9, 10, 6, 5]);
+let student3 = new Student(`0404996865789`, `Ana`, `Novicic`, [9, 10, 8, 8, 7, 6, 10]);
+let student4 = new Student(`13`, `Uki`, `Ilanic`, [7, 8, 9, 8, 8, 8, 8, 7, 8, 9]);
+let studenti = [student1, student2, student3, student4];
+
+
+console.log(student1);
+console.log(student2);
+console.log(student3);
+console.log(student4);
+
+// Napraviti funkciju imePrezime kojoj se prosleđuje ime i prezime, a funkcija vraća broj studenata sa tim imenom i prezimenom.
+
+function imePrezime(i, p) {
+    let  brojac = 0;
+    studenti.forEach(s => {
+        if(s.ime == i && s.prezime == p) {
+            brojac++;
+        }
+    })
+    return brojac;
+}
+
+console.log(imePrezime(`Aca`, `Ciric`));
+
+// Napraviti funkciju srednjaOcena koja ispisuje koja je preosečna ocena svih ocena studenata.
+
+function srednjaOcena(niz) {
+    let suma = 0;
+    let brojac = 0;
+    niz.forEach(s => {
+        s.nizOcena.forEach(o => {
+            suma += o;
+            brojac++;
+        })
+    })
+    return suma / brojac;
+}
+
+console.log(srednjaOcena(studenti));
+
+// Napraviti funkciju osrednji koja ispisuje studenta koji ima prosek najbliži srednjoj oceni svih studenata.
+
+let osrednji = niz => {
+    let razlika = Math.abs(srednjaOcena(niz) - niz[0].prosecnaOcena);
+    let student = niz[0];
+    niz.forEach((n, i) => {
+        if(Math.abs(srednjaOcena(niz) - n.prosecnaOcena) < razlika) {
+            razlika = Math.abs(srednjaOcena(niz) - n.prosecnaOcena);
+            student = niz[i];
+        }
+    });
+    return student;
+}
+
+console.log(osrednji(studenti));
+
+// Napraviti ocenu najmanjaOcenaNajboljeg koja određuje najboljeg studenta i na ekranu ispisuje njegovu najslabiju ocenu.
+
+let najmanjaOcenaNajboljeg = niz => {
+    let max = niz[0].prosecnaOcena;
+    let index = 0;
+    niz.forEach((n, i) => {
+        if(n.prosecnaOcena > max) {
+            max = prosecnaOcena;
+            index = i;
+        }
+    });
+    let min = 10;
+    niz[index].nizOcena.forEach(o => {
+        if(o < min) {
+            min = o;
+        }
+    });
+    console.log(`Najbolji student je ${niz[index].ime}, a njegova najmanja ocena je ${min}.`);
+}
+
+najmanjaOcenaNajboljeg(studenti);
+
+// Napisati funkciju najmanjaOcena koja vraća koja je najmanja ocena, uzimajući u obzir ocene svih ocena koje su studenti dobijali.
+
+let najmanjaOcena = niz => {
+    let min = 10;
+    niz.forEach(n => {
+        n.nizOcena.forEach(o => {
+            if(o < min) {
+                min = o;
+            }
+        });
+    });
+    return min;
+}
+
+console.log(najmanjaOcena(studenti));
+
+// Napisati funkciju najcescaOcena koja vraća ocenu koju su studenti najčešće dobijali. 
+
+let najcescaOcena = niz => {
+    let sest = 0;
+    let sedam = 0;
+    let osam = 0;
+    let devet = 0;
+    let deset = 0;
+    niz.forEach(n => {
+        n.nizOcena.forEach(o => {
+            switch(o) {
+                case 6:
+                    sest++;
+                    break 
+                case 7:
+                    sedam++;
+                    break 
+                case 8:
+                    osam++;
+                    break 
+                case 9:
+                    devet++;
+                    break 
+                case 10:
+                    deset++;
+                    break 
+            }
+        });
+    });
+
+    let pomocniNiz = [sest, sedam, osam, devet, deset];
+    let index = 0;
+    let max = 0;
+    pomocniNiz.forEach((n, i) => {
+        if(n > max) {
+            max = n;
+            index = i;
+        }
+    });
+    console.log(pomocniNiz);
+    return index + 6;
+}
+console.log(najcescaOcena(studenti));
+
+// Napisati funiciju rodjeniGodine kojoj se prosleđuje godina, a funkcija na ekranu ispisuje sve studente koji su rodjeni te godine. Godinu rođenja preuzeti (odrediti) iz JMBG-a studenta.
+
+function rodjeniGodine(god) {
+    let godina = String(god);
+    let gdn = (godina[1] + godina[2] + godina[3]);
+    studenti.forEach(s => {
+        let sJmbg = s.jmbg[4] + s.jmbg[5] + s.jmbg[6];
+        if(sJmbg == gdn) {
+            console.log(s);
+        }
+    });
+}
+rodjeniGodine(1995);
+rodjeniGodine(1997);
+rodjeniGodine(1996);
+rodjeniGodine(1190);
+
+
+
