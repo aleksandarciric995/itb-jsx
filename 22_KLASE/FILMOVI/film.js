@@ -25,23 +25,21 @@ class Film {
     }
 
     set ocene(o) {
-        this._ocene = [];
-        o.forEach(o => {
-            if(o < 5 || o > 10) {
-                this._ocene.push(10);
+        for(let i = 0; i < o.length; i++) {
+            if(o[i] < 5 || o[i] > 10 || o[i] !=Math.ceil(o[i])) {
+                o[i] = 5;
             }
-            else{
-                this._ocene.push(o);
-            }
-        });
-        // for(let i = 0; i < o.length; i++) {
-        //     if(o[i] < 5 || o[i] > 10) {
-        //         this._ocene[i] = 10;
+        }
+        this._ocene = o;
+        // this._ocene = [];
+        // o.forEach(o => {
+        //     if(o < 5 || o > 10) {
+        //         this._ocene.push(10);
         //     }
-        //     else {
-        //         this._ocene[i] = o[i];
+        //     else{
+        //         this._ocene.push(o);
         //     }
-        // }
+        // });
     }
 
     // geteri - get metode - vracaju vrednost polja
@@ -61,8 +59,17 @@ class Film {
         return this._ocene;
     }
 
+    // metode
     stampaj() {
         console.log(`Naslov: ${this.naslov}`); // ovo poziva geter za naslov
+    }
+
+    prosecna() {
+        let suma = 0;
+        this.ocene.forEach(elem => {
+            suma += elem;
+        });    
+        return suma / this.ocene.length;
     }
 }
 
