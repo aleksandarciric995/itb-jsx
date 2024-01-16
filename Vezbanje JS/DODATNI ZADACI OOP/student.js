@@ -4,7 +4,7 @@ class Student {
         this.ime = ime;
         this.prezime = prezime;
         this.nizOcena = nizOcena;
-        this.prosecnaOcena = nizOcena;
+        this.prosecnaOcena = this.nizOcena;
     }
 
     // seteri
@@ -52,10 +52,10 @@ class Student {
 
     set prosecnaOcena(nizOcena) {
         let suma = 0;
-        this.nizOcena.forEach(o => {
+        nizOcena.forEach(o => {
             suma += o;
         });
-        this._prosecnaOcena = suma / this.nizOcena.length;
+        this._prosecnaOcena = suma / nizOcena.length;
     }
 
     // geteri
