@@ -1,38 +1,62 @@
-window.setTimeout(() => {
-    console.log(`Poruka ispisana nakon 3 sekunde.`);
-}, 1000 * 3)
-console.log(1);
-console.log(2);
-window.setTimeout(() => {
-    console.log(`Poruka ispisana nakon nekog vremena.`);
-}, 1000 * 2);
-console.log(3);
-console.log(4);
+const btn1 = document.querySelector(`#btn1`);
+const btn2 = document.querySelector(`#btn2`);
+const btn3 = document.querySelector(`#btn3`);
+const btn4 = document.querySelector(`#btn4`);
+const div = document.querySelector(`#ispis`);
 
-/////////////////////////////////////////////////////
+let timer; // VREDNOST JE UNDEFINED!!!
 
-const btn1 = document.getElementById(`btn1`);
-const div = document.getElementById(`ispis`);
-const btn2 = document.getElementById(`btn2`);
-
-let timer = null;
-
-btn1.addEventListener(`click`, function(e)  {
-    e.preventDefault;
-    let datum = new Date();
+function uradi() {
+    const datum = new Date();
     let h = datum.getHours();
     let m = datum.getMinutes();
     let s = datum.getSeconds();
-    if (timer === null) {
-        timer = window.setTimeout(function() {
-            div.innerHTML += `${h}:${m}:${s} <br>`;
-            timer = null;
-        }, 1000 * 2); // ovako cemo dobiti vreme dve sekunde unazad, da smo stavili let datum i ostale u setTimeout, dobili bismo tacno vreme
+    s = (s < 10) ? `0` + s : `` + s;
+    h = (h < 10) ? `0` + h : `` + h;
+    m = (m < 10) ? `0` + m : `` + m;
+    div.innerHTML += `${h}:${m}:${s}`;
+    timer = undefined;
+}
+
+btn1.addEventListener(`click`, function(e) {
+    e.preventDefault();
+    if(timer === undefined) { /*
+        timer = setTimeout(1000 * 2); // dodela sata
+        // prodje dve sekunde
+        uradi(); // poziv funkcije uradi
+        */
+       timer = setTimeout(uradi, 2000);
     }
 });
 
 btn2.addEventListener(`click`, function(e) {
     e.preventDefault();
-    clearTimeout(timer);
-    timer = null;
+    window.clearTimeout(timer)
+    timer = undefined;
+});
+
+function prikaziSat() {
+    const datum = new Date();
+    let h = datum.getHours();
+    let m = datum.getMinutes();
+    let s = datum.getSeconds();
+    s = (s < 10) ? `0` + s : `` + s;
+    h = (h < 10) ? `0` + h : `` + h;
+    m = (m < 10) ? `0` + m : `` + m;
+    div.innerHTML = `${h}:${m}:${s}`;
+}
+
+let clock;
+
+btn3.addEventListener(`click`, function(e) {
+    e.preventDefault();
+    if(clock === undefined) {
+        clock = setInterval(prikaziSat, 1000 / 2);
+    }
+});
+
+btn4.addEventListener(`click`, function(e) {
+    e.preventDefault();
+    clearTimeout(clock);
+    clock = undefined;
 });
