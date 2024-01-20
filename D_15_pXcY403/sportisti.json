@@ -1,0 +1,17 @@
+[
+    {
+        "imePrezime": "Aleksandar Ciric",
+        "visina": 190,
+        "timovi": ["Lakers", "Dalas"]
+    },
+    {
+        "imePrezime": "Ana Novicic",
+        "visina": 175,
+        "timovi": ["Lakers", "Boston"]
+    },
+    {
+        "imePrezime": "Seka Ciric",
+        "visina": 170,
+        "timovi": ["Tamis", "Dalas", "Memfis"]
+    }
+]
