@@ -447,5 +447,95 @@ rodjeniGodine(1997);
 rodjeniGodine(1996);
 rodjeniGodine(1190);
 
+/////////////////////////////////////////////////////////////////////
+import Plivac from "./plivac.js";
+console.log(`PLIVACI`);
+let plivac1 = new Plivac(`Aleksandar Ciric`, 1995, 1.04);
+let plivac2 = new Plivac(`Ana Novici`, 1996, 0.59);
+let plivac3 = new Plivac(`Seka Ciric`, 1997, 1.09);
+let plivac4 = new Plivac(`Plivac4`, 2001, 1.19);
+let plivac5 = new Plivac(`Plivac5`, 2002, 1.14);
+let plivac6 = new Plivac(`Plivac6`, 2003, 1.24);
+let plivac7 = new Plivac(`Plivac7`, 2004, 1.44);
+let plivac8 = new Plivac(`Plivac8`, 2005, 1.34);
+let plivac9 = new Plivac(`Plivac9`, 2006, 1.39);
+let plivac10 = new Plivac(`Plivac10`, 2007, 1.29);
+let plivac11 = new Plivac(`Plivac11`, 2008, 1.49);
+let plivac12 = new Plivac(`Plivac12`, 2009, 1.54);
+let plivaci = [plivac1, plivac2, plivac3, plivac4, plivac5, plivac6, plivac7, plivac8, plivac9, plivac10, plivac11, plivac12];
+plivac1.ispisi();
+// Napraviti funkciju topTen koja kao rezultat vraća niz od 10 najboljih rezultata ove godine.
+function topTen(niz) {
+    let nizPomocni = [];
+    niz.forEach(n => {
+        nizPomocni.push(n.najboljiRezultat);
+    });
+    console.log(nizPomocni);
+    for(let i = 0; i < nizPomocni.length; i++) {
+        for(let j = 0; j < nizPomocni.length; j++) {
+            if(nizPomocni[i] < nizPomocni[j]) {
+                let treci = nizPomocni[i];
+                nizPomocni[i] = nizPomocni[j];
+                nizPomocni[j] = treci;
+            }
+        }
+    }
+    return nizPomocni.splice(0, 10);
+}
 
+console.log(topTen(plivaci));
 
+// Napraviti funkciju norma kojoj se prosleđuje norma i niz plivača, a funkcija vraća niz onih plivača koji ispunjavaju ovu normu.
+let norma = (niz, v1, v2) => {
+    if(v2 < v1) {
+        let treci = v1;
+        v1 = v2;
+        v2 = treci;
+    }
+    let nizPomocni = [];
+    niz.forEach(n => {
+        if(n.najboljiRezultat >= v1 && n.najboljiRezultat <= v2) {
+            nizPomocni.push(n);
+        }
+    });
+    return nizPomocni;
+};
+console.log(norma(plivaci, 1.19, 1.05));
+
+// Napisati funkciju normaNajmladji koja treba da na ekranu ispiše sve podatke o najmlađem igraču koji zadovoljava normu koja je zadata prethodnom funkcijom.
+console.log(`TEST ISPOD`);
+let normaNajmladji = (niz, v1, v2) => {
+    if(v2 < v1) {
+        let treci = v1;
+        v1 = v2;
+        v2 = treci;
+    }
+    let nizPomocni = [];
+    niz.forEach(n => {
+        if(n.najboljiRezultat >= v1 && n.najboljiRezultat <= v2) {
+            nizPomocni.push(n);
+        }
+    });
+    console.log(nizPomocni);
+    let najmladji = nizPomocni[0].godinaRodjenja;
+    let index = 0;
+    nizPomocni.forEach((t, i) => {
+        if(t.godinaRodjenja > najmladji) {
+            najmladji = t.godinaRodjenja;
+            index = i;
+        }
+    });
+    return nizPomocni[index];
+};
+
+console.log(normaNajmladji(plivaci, 1.19, 1.05));
+
+///////////////////////////////////////////////////////////////////////////
+import Automobil from "./automobil.js";
+console.log(`AUTOMOBILI`);
+let auto1 = new Automobil(300, 0, 198);
+console.log(auto1);
+auto1.ubrzaj(131);
+console.log(auto1);
+auto1.uspori(310);
+console.log(auto1);
