@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: rgb(0, 95, 150);
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    background-color: rgb(0, 95, 150);
+    border: 1px solid black;
+    margin: 15px 0px 15px 0px;
+    width: 300px;
+    text-align: center;
+    font-size: 20px;
+    padding: 6px;
+    color: rgb(233, 105, 105);
+}
+
+li:hover {
+    background-color: rgba(0, 95, 150, 0.267);
+    cursor: pointer;
+}
+
+.precrtaj {
+    text-decoration: line-through;
+}
+
+#btnDodaj {
+    background-color: rgb(0, 95, 150);
+    border: 1px solid black;
+    margin: 15px 0px 15px 0px;
+    width: 312px;
+    text-align: center;
+    font-size: 20px;
+    padding: 6px;
+    color: rgb(233, 105, 105);
+}
+
+#btnDodaj:hover {
+    background-color: rgba(0, 95, 150, 0.267);
+    cursor: pointer;
+}
+
+input[type=text] {
+    width: 300px;
+    text-align: center;
+    font-size: 20px;
+    padding: 6px;
+}
+
+#bottom {
+    margin-top: 15px;
+}
