@@ -90,7 +90,7 @@ request4.addEventListener(`readystatechange`, e => {
         console.log(data);
         let niz = [];
         for(let i = 0; i < data.length; i++) {
-            if(niz.includes(data[i].address.city)) {
+            if(niz.includes(data[i].address.city)) { // ovde sam mogao da kazem .includes === false; pa da uopste nemam else granu
                 continue;
             }
             else {
@@ -115,7 +115,7 @@ request5.addEventListener(`readystatechange`, e => {
         let br = 0;
         let data = JSON.parse(request5.responseText);
         data.forEach(d => {
-            if(d.address.geo.lat < 0 && d.address.geo.lng < 0) {
+            if(d.address.geo.lat < 0 && d.address.geo.lng < 0) { // ovde sam trebao da pretvorim u brojeve geo.lat i geo.lng da bih se osigurao(JS bi trebao sam da uradi to, ali da se ne bi rizikovalo)
                 br++;
             }
         });
@@ -127,3 +127,79 @@ request5.addEventListener(`readystatechange`, e => {
 });
 request5.open(`GET`, `https://jsonplaceholder.typicode.com/users`);
 request5.send();
+
+// RESENJA SA CASA
+/*
+//Ispisati korisnike koji rade u kompaniji čije ime sadrži reč „Group", ili reč „LLC".
+const request3 = new XMLHttpRequest();
+request3.addEventListener("readystatechange", function () {
+  if (request3.readyState === 4 && request3.status === 200) {
+    let data = JSON.parse(request3.responseText);
+    console.log("Cetvrti zadatak");
+    data.forEach(user => {
+      if (
+        user.company.name.includes("Group") ||
+        user.company.name.includes("LLC")
+      ) {
+        console.log(user);
+      }
+    });
+  } else if (request3.readyState === 4) {
+    console.log("Desila se greska");
+  }
+});
+
+request3.open("GET", "https://jsonplaceholder.typicode.com/users");
+request3.send();
+
+// Ispisati sve različite gradove u kojima rade ovi korisnici.
+const request4 = new XMLHttpRequest();
+request4.addEventListener("readystatechange", function () {
+  if (request4.readyState === 4 && request4.status === 200) {
+    let data = JSON.parse(request4.responseText);
+    console.log("Peti zadatak");
+
+    let gradovi = [];
+    data.forEach(user => {
+      if (
+        user.company.name.includes("Group") ||
+        user.company.name.includes("LLC")
+      ) {
+        if (gradovi.includes(user.address.city) === false)
+          gradovi.push(user.address.city);
+      }
+    });
+    console.log(gradovi);
+  } else if (request4.readyState === 4) {
+    console.log("Desila se greska");
+  }
+});
+
+request4.open("GET", "https://jsonplaceholder.typicode.com/users");
+request4.send();
+
+// Ispisati broj korisnika koji žive na adresi čije su obe vrednosti geografske dužine i geografske širine negativni brojevi.
+const request5 = new XMLHttpRequest();
+request5.addEventListener("readystatechange", function () {
+  if (request5.readyState === 4 && request5.status === 200) {
+    let data = JSON.parse(request5.responseText);
+    console.log("Sesti zadatak");
+
+    let suma = 0;
+    data.forEach(user => {
+      if (
+        Number(user.address.geo.lat) < 0 &&
+        Number(user.address.geo.lng) < 0
+      ) {
+        suma++;
+      }
+    });
+    console.log(suma);
+  } else if (request5.readyState === 4) {
+    console.log("Desila se greska");
+  }
+});
+
+request5.open("GET", "https://jsonplaceholder.typicode.com/users");
+request5.send();
+*/
