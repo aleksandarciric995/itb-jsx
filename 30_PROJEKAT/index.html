@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- PRVI DEO ZADATKA, HEADER -->
+    <header>
+        <h1 id="naslov">Acin ChatRoom</h1>
+        <h3>Choose a chatroom</h3>
+        <div id="roomSelection">
+            <button type="button" id="generalRoom" class="btnRooms">#general</button>
+            <button type="button" id="jsRoom" class="btnRooms">#js</button>
+            <button type="button" id="homeworksRoom" class="btnRooms">#homeworks</button>
+            <button type="button" id="testsRoom" class="btnRooms">#tests</button>
+        </div>
+    </header>
+
+    <!-- DEO ZA PRIKAZ PORUKA -->
+    <section id="prikazPoruka">
+        <p>poruka</p>
+        <!-- JELENA JE STAVILA UL OVDE ZA ISPIS PORUKA -->
+    </section>
+
+    <!-- Inputi - text poruke i slanje -->
+    <!-- JELENA JE ZA OVO STAVILA FORME -->
+    <div id="inputs">
+        <div id="divSend">
+            <input type="text" name="poruka" id="inputText" placeholder="Your message...">
+            <button type="button" id="btnSend">Send</button>
+        </div>
+        <div id="divUser">
+            <input type="text" name="user" id="inputUser" placeholder="Update username">
+            <button type="button" id="btnUser">Update</button>
+        </div>
+    </div>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+
+    <script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyC8gYEHvU7h5GzHc5_bTRH3xnXZ2FAWtgU",
+        authDomain: "itb-js-pxcy403.firebaseapp.com",
+        projectId: "itb-js-pxcy403",
+        storageBucket: "itb-js-pxcy403.appspot.com",
+        messagingSenderId: "278721594112",
+        appId: "1:278721594112:web:1ad902c1e1dac08a56a9e5"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    let db = firebase.firestore(); // ovo ce da vazi i u script.js i bilo gde drugde, tako prosto radi => NE SMEMO!! da nazovemo nigde drugde promenljivu db;
+        </script>
+        <script src="chat.js" type="module"></script>
+        <script src="script.js" type="module"></script>
+</body>
+</html>
