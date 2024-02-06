@@ -284,7 +284,7 @@ db.collection(`movies`).doc(`mov1`)
     console.log(`Greska ${e}`);
 })
 
-// Dohvatanje dokumenta
+// Dohvatanje dokumenta - u realnosti vrlo retko se koristi,  vise se koristi opcija dohvatanja CELE kolekcije
 // OVAKO postoji sansa da vrati mov1 sa NEIZMENJENIN rejtingom, zavisi sta se prvo izvrsi - da bi se uzelo u obzir sigurno i izmena rejtinga, potrebno je get() ubaciti kao return unutra then f-je kod promene rejtinga
 db.collection(`movies`).doc(`mov1`)
 .get()
@@ -314,3 +314,4 @@ db.collection(`customers`)
 .catch(e => {
     console.log(`Greska ${e}`);
 });
+
