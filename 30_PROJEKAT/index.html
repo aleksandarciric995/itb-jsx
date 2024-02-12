@@ -18,18 +18,23 @@
             <button type="button" id="testsRoom" class="btnRooms">#tests</button>
         </div>
     </header>
-
+    
     <!-- DEO ZA PRIKAZ PORUKA -->
     <section id="prikazPoruka">
-        <p>poruka</p>
         <!-- JELENA JE STAVILA UL OVDE ZA ISPIS PORUKA -->
+        <ul id="ulListaPoruka"></ul>
     </section>
 
     <!-- Inputi - text poruke i slanje -->
     <!-- JELENA JE ZA OVO STAVILA FORME -->
     <div id="inputs">
+        <div id="divBoja">
+            <input type="color" name="boja" id="inputBoja">
+            <button type="button" id="btnColor">Update color</button>
+        </div>
         <div id="divSend">
-            <input type="text" name="poruka" id="inputText" placeholder="Your message...">
+            <!-- <input type="text" name="poruka" id="inputText" placeholder="Your message..."> -->
+            <textarea name="poruka" id="inputText" cols="30" rows="1" placeholder="Your message..."></textarea>
             <button type="button" id="btnSend">Send</button>
         </div>
         <div id="divUser">
@@ -57,7 +62,7 @@
     firebase.initializeApp(firebaseConfig);
     let db = firebase.firestore(); // ovo ce da vazi i u script.js i bilo gde drugde, tako prosto radi => NE SMEMO!! da nazovemo nigde drugde promenljivu db;
         </script>
-        <script src="chat.js" type="module"></script>
-        <script src="script.js" type="module"></script>
+        <!-- <script src="chat.js" type="module"></script> -->
+        <script src="app.js" type="module"></script>
 </body>
 </html>
