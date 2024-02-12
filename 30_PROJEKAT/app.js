@@ -18,7 +18,16 @@ const inputBoja = document.getElementById(`inputBoja`);
 const trash = document.getElementsByClassName(`trash`);
 
 // objekti
-let chatroom = new Chatroom(`#general`, `Seka`);
+let soba = localStorage.getItem(`soba`);
+let chatroom = new Chatroom(soba, `Seka`);
+if(soba) {
+    chatroom = new Chatroom(soba, `Seka`);
+}
+else {
+    soba = localStorage.setItem(`soba`, `#general`);
+}
+
+chatroom = new Chatroom(soba, `Seka`);
 let chatui = new ChatUI(ulListaPoruka);
 
 // user1.addChat(`Cao`);
@@ -102,6 +111,19 @@ chatroom.username = username;
 //     chatroom.username = localStorage.getItem(`user`);
 // }
 
+if(localStorage.getItem(`soba`) === `#general`) {
+    generalRoom.style.color = `red`;
+}
+else if(localStorage.getItem(`soba`) === `#js`) {
+    jsRoom.style.color = `red`;
+}
+else if(localStorage.getItem(`soba`) === `#homeworks`) {
+    homeworksRoom.style.color = `red`;
+}
+else if(localStorage.getItem(`soba`) === `#tests`) {
+    testsRoom.style.color = `red`;
+}
+
 
 // Prikaz poruka na stranici
 chatroom.getChats(data => {
@@ -171,6 +193,8 @@ btnUser.addEventListener(`click`, e => {
 
 roomSelection.addEventListener(`click`, e => {
     if(e.target.id === `generalRoom`) {
+        soba = `#general`;
+        localStorage.setItem(`soba`, soba);
         chatui.delete();
         chatroom.room = `#general`;
         chatroom.getChats(data => {
@@ -183,6 +207,8 @@ roomSelection.addEventListener(`click`, e => {
         testsRoom.style.color = `black`;
     }
     else if(e.target.id === `jsRoom`) {
+        soba = `#js`;
+        localStorage.setItem(`soba`, soba);
         chatui.delete();
         chatroom.room = `#js`;
         chatroom.getChats(data => {
@@ -195,6 +221,8 @@ roomSelection.addEventListener(`click`, e => {
         testsRoom.style.color = `black`;
     }
     else if(e.target.id === `homeworksRoom`) {
+        soba = `#homeworks`;
+        localStorage.setItem(`soba`, soba);
         chatui.delete();
         chatroom.room = `#homeworks`;
         chatroom.getChats(data => {
@@ -207,6 +235,8 @@ roomSelection.addEventListener(`click`, e => {
         testsRoom.style.color = `black`;
     }
     else if(e.target.id === `testsRoom`) {
+        soba = `#tests`;
+        localStorage.setItem(`soba`, soba);
         chatui.delete();
         chatroom.room = `#tests`;
         chatroom.getChats(data => {
