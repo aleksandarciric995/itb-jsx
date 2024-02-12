@@ -110,7 +110,6 @@ ul {
 }
 
 .userReceive {
-    
     border-radius: 6px;
     border: solid 1px black;
     background-color: rgba(0, 0, 255, 0.116);
@@ -124,7 +123,7 @@ ul {
 }
 
 #inputBoja {
-    width: 10vw;
+    width: 20vw;
 }
 
 .trash {
@@ -173,5 +172,4 @@ ul {
         width: 40vw;
         min-width: fit-content;
     }
-
 }

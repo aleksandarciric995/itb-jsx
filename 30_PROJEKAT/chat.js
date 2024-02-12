@@ -22,6 +22,9 @@ class Chatroom {
         } else {
             alert(`Duzina korisnickog imena mora da bude izmedju 2 i 10 karaktera`);
         }
+        if(this.unsub) {
+            this.unsub();
+        }
     }
 
     // geteri

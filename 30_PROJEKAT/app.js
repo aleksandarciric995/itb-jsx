@@ -229,3 +229,4 @@ btnColor.addEventListener(`click`, e => {
     localStorage.setItem(`boja`, inputBoja.value);
 });
 
+inputBoja.value = localStorage.getItem(`boja`);
